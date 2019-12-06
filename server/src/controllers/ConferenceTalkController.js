@@ -6,7 +6,7 @@ const {
 
 const addTalk =[
   check('talk_title').isLength({ min: 3 }).withMessage('Please input a title. Title is too short'),
-  body('time_time').isLength({ min: 2 }).withMessage('Please input talk time'),
+  body('talk_time').isLength({ min: 2 }).withMessage('Please input talk time'),
   check('talk_synopsis').isLength({ min: 10 }).withMessage('Please input a synopsis. Summary is too short'),
 
   (req, res) => {
@@ -18,11 +18,11 @@ const addTalk =[
         })
     } else {
         
-    const { talk_title, time_time, talk_synopsis } = req.body;
+    const { talk_title, talk_time, talk_synopsis } = req.body;
 
     const talk = new Talk({
         talk_title,
-        time_time,
+        talk_time,
         talk_synopsis
     })
     talk.save((err) =>{

@@ -1,8 +1,8 @@
+import express from 'express';
 const TalkController = require('../controllers/index').TalkController
 const AttendeeController = require('../controllers/index').AttendeeController
 const AssignedTalksController = require('../controllers/index').AssignedTalksController
 
-var express = require('express');
 const app = express.Router();
 
 app.get('/api', (req, res) => res.status(200).send({
