@@ -4,6 +4,8 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 import cors from 'cors';
+import APIRouter from './routes/index';
+
 require('./models/index');
 
 const app = express();
@@ -15,6 +17,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', APIRouter);
+// require('./routes')(app);
 
 
 app.get('*', (req, res) => res.status(200).send({

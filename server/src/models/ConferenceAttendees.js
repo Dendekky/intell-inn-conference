@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const AttendeeSchema = new Schema({
-    full_name: {
+const Attendee = new Schema({
+    name: {
       type: 'String',
       required: true,
       trim: true
@@ -13,14 +13,20 @@ const AttendeeSchema = new Schema({
       required: true,
       trim: true,
       unique: true
+    },
+    category: {
+      type: 'String',
+      required: true,
+      trim: true,
+      unique: true
     }
   });
 
-AttendeeSchema
+Attendee
 .virtual('url')
 .get(function () {
   return '/attendees/' + this._id;
 });
 
 
-  module.exports = mongoose.model('Attendee', AttendeeSchema);
+  module.exports = mongoose.model('Attendee', Attendee);

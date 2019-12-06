@@ -2,29 +2,29 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const TalkSchema = new Schema({
-    title: {
+const Talk = new Schema({
+    talk_title: {
       type: 'String',
       required: true,
       trim: true,
       unique: true
     },
-    time_limit: {
+    talk_time: {
       type: 'String',
       required: true,
       trim: true
     },
-    talk_summary:{
+    talk_synopsis:{
       type: 'String',
       required: true
     }
   });
 
-TalkSchema
+Talk
 .virtual('url')
 .get(function () {
   return '/talks/' + this._id;
 });
 
 
-module.exports = mongoose.model('Talk', TalkSchema);
+module.exports = mongoose.model('Talk', Talk);
