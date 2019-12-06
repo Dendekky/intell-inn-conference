@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import './App.scss';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
+import AttendeeForm from './pages/attendform';
 
-class App extends Component {
-  render() {
-    const App = () => (
-      <div>
-        <h4>Hello, Welcome to React</h4>
-      </div>
-    )
-    return (
-        <App/>
-    );
-  }
-}
-
+const App = () => <Router>
+    <div>
+    <Route exact path='/' component={AttendeeForm}></Route>
+    </div>
+    </Router>;
+ 
 export default App;
