@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 import cors from 'cors';
-
+require('./models/index');
 
 const app = express();
 
