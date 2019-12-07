@@ -20,5 +20,4 @@ app.get('/api/attendees', AttendeeController.getAllAttendees);
 app.get('/api/assigned/talks', AssignedTalksController.getAllAssignedTalks);
 app.get('/api/talk/get/:id', TalkController.getTalk);
 
-
 module.exports = app
