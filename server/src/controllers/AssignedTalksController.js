@@ -57,7 +57,14 @@ const getAllAssignedTalks = (req, res) => {
 
 }
 
+const deleteAssignedTalk = (req, res) => {
+    AssignedTalk.findByIdAndRemove(req.params.id)
+    .then(res.redirect('/api/talks'))
+        res.redirect('/api/talks')
+}
+
 module.exports = {
     assignTalk,
-    getAllAssignedTalks
+    getAllAssignedTalks,
+    deleteAssignedTalk
 }

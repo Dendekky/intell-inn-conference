@@ -5,7 +5,7 @@ const {
   } = require('express-validator');
 
 const addAttendee = [
-  check('name').isLength({ min: 3 }).withMessage('Please input your full name'),
+  check('name').isLength({ min: 3 }).withMessage('Please input your full name. Name too short'),
   body('email').isEmail().withMessage('Type in an actual email').normalizeEmail(),
   check('category').isLength({ min: 3 }).withMessage('Please state which category you belong to'),
 
@@ -56,7 +56,14 @@ const getAllAttendees = (req, res) => {
 
 }
 
+const deleteAttendee = (req, res) => {
+    Attendee.findByIdAndRemove(req.params.id)
+    .then(res.redirect('/api/attendees'))
+        res.redirect('/api/attendees')
+}
+
 module.exports = {
     addAttendee,
-    getAllAttendees
+    getAllAttendees,
+    deleteAttendee
 }
