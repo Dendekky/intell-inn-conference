@@ -62,6 +62,26 @@ export default function HeaderLinks(props) {
             VIEW ALL TALKS
           </Button>
       </ListItem>
+      <ListItem className={classes.listItem}>
+          <Button
+            color="transparent"
+            className={classes.navLink}
+            component={Link}
+            to="/attendeelist"
+          >
+            VIEW ALL ATTENDEES
+          </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+          <Button
+            color="transparent"
+            className={classes.navLink}
+            component={Link}
+            to="/assignedtalk"
+          >
+            VIEW ASSIGNED TALKS
+          </Button>
+      </ListItem>
     </List>
   );
 }
