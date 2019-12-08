@@ -41,8 +41,8 @@ Run `npm install`  in the server and client root folders respectively to install
 To test the application, run `npm start` from the root of client folder and `npm run dev` from the root of server folder
 
 
-Language
+## Language
 JavaScript
 
-Author
+## Author
 Ibrahim Adeniyi
