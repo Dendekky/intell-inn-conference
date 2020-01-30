@@ -28,5 +28,4 @@ Attendee
   return '/attendees/' + this._id;
 });
 
-
-  module.exports = mongoose.model('Attendee', Attendee);
+module.exports = mongoose.model('Attendee', Attendee);
