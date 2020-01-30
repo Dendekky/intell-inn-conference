@@ -1,6 +1,7 @@
-# mylaw-conference App
 
-The mylaw-conference app is screated with NodeJs on the server side using express as the library's framework. On the client side, it is designed with React. 
+# Intelligent Innovations App
+
+The Intelligent Innovations app is screated with NodeJs on the server side using express as the library's framework. On the client side, it is designed with React.
 
 ## Features of this Application
 
